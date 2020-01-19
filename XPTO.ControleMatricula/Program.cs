@@ -19,11 +19,17 @@ namespace XPTO.ControleMatricula
             Console.WriteLine("Digite um número para escolher.");
             Console.WriteLine("1 - Gerar digito verificador ");
             Console.WriteLine("2 - Verificar matriculas apontando o erro e a acerto do digito verificador");
-            var teclaClicada = Console.ReadLine();
-            if (teclaClicada == "1")
+            var teclaDigitada = Console.ReadLine();
+            if (teclaDigitada == "1")
                 GerarDigitoVerificador();
-            if (teclaClicada == "2")
+            if (teclaDigitada == "2")
                 VerificarMatriculas();
+            if(teclaDigitada != "1" && teclaDigitada != "2")
+            {
+                Console.WriteLine("Opção inválida, aperte qualquer tecla para continuar");
+                Console.ReadKey();
+                IniciarPrograma();
+            }
         }
 
         public static void VerificarMatriculas()
